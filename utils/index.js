@@ -24,6 +24,16 @@ module.exports = {
             
             return newName;
         }
+    },
+
+    deleteImage: (filePath) => {
+        const imagePath = path.join(__dirname, '../', '/public' + filePath);
+        fs.unlink(imagePath, function (error) {
+            if(error){
+                return console.log(error);
+            }
+            console.log('删除文图片成功')
+        })
     }
 
 }

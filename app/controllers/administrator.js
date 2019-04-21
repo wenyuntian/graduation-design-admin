@@ -4,12 +4,12 @@ const Administrator = require('../models/administrator');
 
 module.exports = {
     update: (req, res) => {
-        const id = req.body.administrator.id;
+        const id = '5cb6e8cf27702821e8558c6e';
         const administrator = req.body.administrator;
         if (id != null) {
             Administrator.update({
                 _id: id
-            }, administrator, (error, administrator) => {
+            }, administrator, (error, status) => {
                 if (error) {
                     console.log(error)
                     return res.send({
@@ -20,7 +20,7 @@ module.exports = {
                 res.send({
                     status: 1000,
                     information: '信息更新成功',
-                    administrator: administrator
+                    status: status
                 })
             })
         }

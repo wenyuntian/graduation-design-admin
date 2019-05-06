@@ -12,7 +12,7 @@ module.exports = {
 
         if (originalFilename) {
             fs.readFile(originalFilePath, function (error, data) {
-                if(error) {
+                if (error) {
                     return console.log(err);
                 }
                 fs.writeFile(newPath, data, function (error) {
@@ -21,7 +21,7 @@ module.exports = {
                     }
                 })
             })
-            
+
             return newName;
         }
     },
@@ -29,7 +29,7 @@ module.exports = {
     deleteImage: (filePath) => {
         const imagePath = path.join(__dirname, '../', '/public' + filePath);
         fs.unlink(imagePath, function (error) {
-            if(error){
+            if (error) {
                 return console.log(error);
             }
             console.log('删除文图片成功')
